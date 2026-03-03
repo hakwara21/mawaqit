@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مواقيت الصلاة - تطبيق احترافي</title>
+    <script>
+      // Fix for libraries that try to overwrite window.fetch (e.g., @protobufjs/fetch)
+      // This prevents the "Cannot set property fetch of #<Window> which has only a getter" error.
+      (function() {
+        try {
+          const originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() { return originalFetch; },
+            set: function(v) { 
+              console.warn('Attempted to overwrite window.fetch. Ignoring.');
+            }
+          });
+        } catch (e) {
+          // If we can't redefine it, it's likely already a non-configurable getter.
+          // In some environments, we can't fix this via script if it's already locked.
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-C1-69o0I.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CBM8Qj8e.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
